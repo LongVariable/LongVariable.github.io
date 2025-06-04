@@ -1,4 +1,4 @@
-# Ahoj, jsem Michal Dlouhý
+# 👋 Ahoj, jsem Michal Dlouhý
 
 ### Technologie
 
