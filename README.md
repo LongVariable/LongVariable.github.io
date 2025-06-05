@@ -13,7 +13,9 @@
 
 ### Projekty
 
-- [Účetni doklady](https://github.com/LongVariable/SS-WPF-Ucetni_doklady) - C#, WPF
+- [Účetni doklady](https://github.com/LongVariable/SS-WPF-Ucetni_doklady) - C# aplikace s WPF
+- [Fakturační program](https://github.com/LongVariable/VS-OOP-Fakturace) - C++ konzolová aplikace
+- [Epidemické modelování](https://github.com/LongVariable/VS-Epidemicke_modelovani) - C aplikace pro vykreslení grafu
   
 ### Kontakt
 
