@@ -13,7 +13,7 @@
 
 ### Projekty
 
-- [Účetni doklady - WPF](https://github.com/LongVariable/SS-WPF-Ucetni_doklady)
+- [Účetni doklady](https://github.com/LongVariable/SS-WPF-Ucetni_doklady) - C#, WPF
   
 ### Kontakt
 
