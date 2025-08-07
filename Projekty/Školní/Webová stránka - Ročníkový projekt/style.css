@@ -1,0 +1,492 @@
+/*KÓD PRO VŠECHNY STRÁNKY*/
+body {
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-image: url("obrazky/01.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+  }
+  .logo{
+    padding-top: 15px;
+    padding-left: 30px;
+    float:left;
+  }
+  nav{
+    width: 100%;
+    background-color: #333;
+    height: 100px;
+    float: left;
+    position: fixed;
+    z-index: 1;
+  }
+  nav h1{
+    float: left;
+    color:#F8BC1A;
+    font-size: 46px;
+    font-weight: bold;
+    padding: 4px 0 0 50px;
+    position: relative;
+    bottom: 21px;
+  }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    float: right;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 32px;
+    padding: 11px 30px 7px 25px;
+    transition: 0.5s;
+    position: relative;
+    top: 32px;
+  }
+  nav ul li a:hover{color:#F8BC1A;}
+  nav ul li a.active{
+    border-radius: 8px;
+    color:#333;
+    background-color: #F8BC1A;
+  }
+  nav ul li a.active:hover{color:#333;}
+  section{background-color: #FFF; z-index: 0;}
+  .vitejte, .pozvanka, .informaceOTrenerech, .hlavniCil, .clenstvi{
+    margin:100px 0;
+    background-color: #585858;
+    width: 75%;
+    border-bottom: #ffffff 16px solid;
+    transition: 1s;
+  }
+  .clenstvi{ margin-top:0px;}
+  .vitejte, .informaceOTrenerech, .hlavniCil{
+    border-top-right-radius: 60px;
+    border-bottom-right-radius: 60px;
+  }
+  .pozvanka, .clenstvi{
+    float:right;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+  }
+  .vitejte:hover, .pozvanka:hover, .informaceOTrenerech:hover, .hlavniCil:hover, .clenstvi:hover{
+    background-color: #464646;
+    border-bottom: #F8BC1A 16px solid;
+  }
+  .vitejte h4{
+    padding-top: 20px;
+    margin-bottom: -1px;
+  }
+  .vitejte h4, .pozvanka h4, .informaceOTrenerech h4, .hlavniCil h4, .clenstvi h4{
+    font-size: 36px; 
+    text-align: center;
+    color: #F8BC1A;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .pozvanka h4{margin: 25px 0;}
+  .informaceOTrenerech h4 {padding-top:25px; margin-bottom: 0px;}
+  .hlavniCil h4{margin: 25px 0; padding-top: 20px;}
+  .clenstvi h4{margin: 25px 0; padding-top: 8px;}
+  .vitejte p, .pozvanka p, .informaceOTrenerech p, .hlavniCil p, .clenstvi p{
+    text-align: justify;
+    color: #F8BC1A;
+    background-color: #333;
+    font-size: 20px;
+    padding: 40px 50px 40px 50px;
+    margin-bottom: 0px;
+    line-height: 1.5;
+  }
+  .vitejte p, .informaceOTrenerech p, .hlavniCil p{border-bottom-right-radius: 48px;}
+  .pozvanka p, .clenstvi p{border-bottom-left-radius: 48px;}
+  footer {background-color: #333; clear:both}
+  .item1{grid-area: kontakt;}
+  .item2{grid-area: oteviraciDoba;}
+  .item3{grid-area: zaver;}
+  .grid-container{
+    display:grid;
+    grid-template-columns:  1fr 1fr;
+    grid-template-areas:
+     'kontakt  oteviraciDoba'
+     'zaver zaver ';
+    grid-gap: 10px;
+    padding: 10px;
+    }
+    .grid-container div{
+      text-align: center;
+      text-decoration: none; 
+      color:#F8BC1A;
+    }
+    .grid-container div p{font-size: 28px;}
+    .grid-container div h3{font-size: 36px;}
+    .grid-container div a{
+      font-size: 35px;
+      color:#F8BC1A;
+      padding: 0 20px;
+      transition: 0.5s;
+    }
+    .grid-container div a:hover{color:#ffffff;}
+    .grid-container div img{padding-right: 10px;}
+    .grid-container .item1 ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .grid-container .item3 hr{
+      border: none;
+      height: 2px;
+      width:50%;
+      background-color:#F8BC1A;
+    }
+    /*ÚVOD (INDEX)*/
+
+    .vyber{
+      padding: 20px;
+      background-color: #333;
+    }
+    .vyber h3{
+        text-align: center;
+        font-size: 40px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color:#F8BC1A;
+    }
+    .indexItem1{grid-area: vybaveni;}
+    .indexItem2{grid-area: zdravi;}
+    .indexItem3{grid-area: sprcha;}
+    .indexItem4{grid-area: potreby;}
+    .vyber-grid-container{
+      padding-top: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-areas: 'vybaveni zdravi sprcha potreby';
+      grid-gap: 80px;
+      text-align: center;
+    }
+    .vyber-grid-container .indexItem2 img {
+      margin-top: 16px;
+      width:57px;
+      height:57px;
+      text-align: center;
+    }
+    .vyber-grid-container .indexItem3 img{margin-top: 24px;}
+    .vyber-grid-container .indexItem4 img{margin-top: 15px;}
+    .vyber-grid-container h5{
+      font-size: 30px;
+      color:#F8BC1A;
+      font-weight: bold;
+    }
+    .vyber-grid-container p{
+      color:#F8BC1A;
+      text-align: center;
+      font-size: 20px;
+      padding:0 50px;
+      align-items: center;
+      justify-items: center;
+    }
+    /*O NÁS*/
+    .fotka1{grid-area: trener1;}
+    .fotka2{grid-area: trener2;}
+    .fotka3{grid-area: trener3;}
+    .fotka4{grid-area: trener4;}
+    .fotka5{grid-area: trener5;}
+    .fotka6{grid-area: trener6;}
+    .fotkyTreneru-grid-container{
+      display:grid;
+      grid-template-columns:  1fr 1fr 1fr;
+      grid-template-areas:
+      'trener1 trener2 trener3'
+      'trener4 trener5 trener6';
+      text-align: center;
+      grid-gap:0 0px;
+      margin-bottom: 80px;
+    }
+    .fotkyTreneru-grid-container div{
+      margin:20px 28.4%;
+    }
+    .fotkyTreneru-grid-container img{
+      width: 270px;
+      height: 300px;
+      border-left:#333 2px solid;
+      border-right:#333 2px solid;
+      border-top:#333 2px solid;
+    }
+    .fotka5 img{width:272px;}
+    .fotkyTreneru-grid-container p{
+      background-color: #333;
+      margin-top: -3px;
+      text-align: center;
+      padding: 15px 0;
+      color:#F8BC1A;
+      font-size: 24px;
+      border-left:#333 2px solid;
+      border-right:#333 2px solid;
+      border-bottom:#333 2px solid;
+      transition: 0.7s;
+      line-height: 2;
+      width: 270px;
+    }
+    .fotkyTreneru-grid-container p:hover{background-color: #1f1f1f;}
+    .fotka2 p{margin-left: 1px; margin-right: 1px;}
+    .informace1, .informace2, .informace3, .informace4{
+    margin:25px 0;
+    background-color: #585858;
+    width: 75%;
+    border-bottom: #ffffff 16px solid;
+    transition: 1s;
+    }
+    .informace1, .informace2{
+      float: right;
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+    }
+    .informace3, .informace4{
+      float: left;
+      border-top-right-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+    .informace1:hover, .informace2:hover, .informace3:hover, .informace4:hover{
+      background-color: #464646;
+      border-bottom: #F8BC1A 16px solid;
+    }
+    .informace1 p, .informace2 p, .informace3 p, .informace4 p{
+      text-align: justify;
+      color: #F8BC1A;
+      background-color: #333;
+      font-size: 20px;
+      padding: 40px 50px 40px 50px;
+      margin-bottom: 0px;
+      line-height: 1.5;
+    }
+    .informace1 p, .informace2 p{border-bottom-left-radius: 48px;border-top-left-radius: 48px;}
+    .informace3 p, .informace4 p{border-bottom-right-radius: 48px;border-top-right-radius: 48px;}
+    .informace4{margin-bottom: 100px;}
+    /*CENÍK*/
+    .cenik-flex-container{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+    }
+    .cenik-box{width: 500px;}
+    .cenik-box2{width: 400px;}
+    .cenik-box, .cenik-box2{
+      background-color: #F8BC1A;
+      border:#333 4px solid;
+      margin: 40px;
+      text-align: center;
+      border-radius: 30px;
+      transition: 0.7s;
+    }
+    .cenik-box:hover, .cenik-box2:hover{
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px #000;
+    }
+    .cenik-box h4, .cenik-box2 h4{
+      color:#333;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .cenik-box ul{list-style: none;}
+    .cenik-box ul li{
+      text-align: center;
+      padding:5px 40px 5px 20px;
+      font-size: 22px;
+      color: #333 ;
+    }
+    .cenik-box ol{padding: 0 0 30px 90px;}
+    .cenik-box ol li{
+      text-align: justify;
+      padding:5px 10px;
+      font-size: 22px;
+      color:#333;
+    }
+    .cenik-box2 .cena{
+      font-size: 40px;
+      color:#333;
+    }
+    .cenik-box2 p{
+      font-size: 24px;
+      line-height: 2;
+      color:#333;
+    }
+    .cenik-box2 a{
+      background-color: #333;
+      border:#333 solid 2px;
+      color:#F8BC1A;
+      text-decoration: none;
+      font-size: 24px;
+      padding: 15px 25px;
+      border-radius: 25px;
+      transition: 0.5s;
+    }
+    .cenik-box2{padding-bottom: 40px;}
+    .odsazeni{margin-bottom: 100px;}
+    .cenik-nadpis{
+      text-align: center;
+      color:#F8BC1A;
+      background-color: #333;
+      width: 100%;
+      padding: 20px 0;
+      font-size: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin:80px 0;
+    }
+  
+    /*FITNESS PROGRAMY*/
+    .fitness-programy-banner{
+      text-align: center;
+      color:#F8BC1A;
+      background-color: #333;
+      width: 100%;
+      padding: 20px 0;
+      font-size: 50px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin:80px 0;
+    }
+    .program1-obrazek{grid-area: obrazek1;}
+    .program1{grid-area: program1;}
+    .program2-obrazek{grid-area: obrazek2;}
+    .program2{grid-area: program2;}
+    .program3-obrazek{grid-area: obrazek3;}
+    .program3{grid-area: program3;}
+    .program4-obrazek{grid-area: obrazek4;}
+    .program4{grid-area: program4;}
+    .grid-container-programy{
+      display: grid;
+      grid-template-columns:  1fr 1fr;
+      grid-template-areas: 
+      'obrazek1 program1'
+      'program2 obrazek2'
+      'obrazek3 program3'
+      'program4 obrazek4';
+      text-align: center;
+      border: 50px solid #333;
+      margin-bottom: 100px;
+    }
+    .program1, .program2, .program3, .program4{
+      background-color: #333;
+      transition: 1s;
+    }
+    .program1:hover, .program2:hover, .program3:hover, .program4:hover{transform: scale(1.1);}
+    .grid-container-programy h5{
+      color:#F8BC1A;
+      font-size:34px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .program1, .program3{margin-left: -50px;}
+    .program2, .program4{margin-right: -50px;}
+    .program1 p, .program2 p, .program3 p, .program4 p{
+      color:#F8BC1A;
+      font-size: 28px;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    .program1 p{padding:0px 45px 25px 100px;}
+    .program2 p{padding:0px 100px 25px 45px;}
+    .program3 p{padding:0px 45px 25px 100px;}
+    .program4 p{padding:0px 100px 25px 45px;}
+    .obrazek-srovnani{margin: 100px 40px 0 0;}
+    table{
+      margin: 0 auto;
+      border:#333 4px solid;
+      border-collapse: collapse;
+      margin-bottom: 100px;
+      color:#333;
+    }
+    table th, table tr, table td{border:#333 4px solid;}
+    table th{
+      background-color: #F8BC1A;
+      font-size: 17px;
+      padding: 32px 42px;
+    }
+    table tr, table td{
+      padding: 16px 21px;
+      text-align: center;
+      transition: 0.5s;
+    } 
+    table td:hover{background-color: #F8BC1A;}
+
+    /*KONTAKT*/
+    .KontaktBanner{
+      width:100%;
+      height: 200px;
+      background-color: #333;
+      margin-bottom: 100px;
+      margin-top: 90px;
+    }
+    .KontaktBanner h2{
+      color:#F8BC1A;
+      font-size: 60px;
+      text-align: center;
+      padding-top: 60px;
+      text-transform: uppercase;
+    }
+    .box1{
+      background-color: #333;
+      grid-area: formular;
+    }
+    .box2{
+      grid-area: mapa;
+      margin-bottom: -3px;
+    }
+    .grid-container2{
+      display:grid;
+      grid-template-columns:  1fr 1fr;
+      grid-template-areas:
+       'formular mapa';
+       border-top: 4px solid #F8BC1A;
+       border-bottom: 4px solid #F8BC1A;
+       background-color: #333;
+       text-align: center;
+       margin-bottom: 100px;
+    }
+    .grid-container div{
+      text-align: center;
+      
+      text-decoration: none; 
+      color:#F8BC1A;
+    }
+    .grid-container2 form{
+      display: flex;
+      flex-direction: column;
+    }
+    .grid-container2 form input, .grid-container2 form textarea{
+      margin:20px 40px 20px 80px;
+      font-size: 26px;
+      border: 2px solid #F8BC1A;
+      padding:10px
+    }
+    .grid-container2 form textarea{
+      height:100px;
+    }
+    .grid-container2 form button{
+      height: 52px;
+      width:150px;
+      background-color: #F8BC1A;
+      border: none;
+      cursor: pointer;
+      margin:20px 40px 20px 80px;
+      font-size: 24px;
+      color: #333;
+      font-weight: bold;
+      border: 2px solid #333;
+      transition: 0.5s;
+    }
+    .grid-container2 form button:hover{
+      border: 2px solid #F8BC1A;
+      color: #F8BC1A;
+      background-color: #333;
+    }
+
