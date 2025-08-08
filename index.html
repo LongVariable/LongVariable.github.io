@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Michal Dlouhý</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <header>
+    <div class="head-container">
+    
+      <h1 class="name"><i class="fas fa-home page-icon"></i>Michal Dlouhý</h1>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Úvod</a></li>
+          <li><a href="about.html">O mně</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="uvod">
+    <div class="container uvod-flex">
+      <div class="uvod-text">
+        <p class="pozdrav">Zdravím<span class="tecka">.</span></p>
+        <p class="jmeno">Tady Michal</p>
+        <p class="profese">IT nadšenec</p>
+        <a href="files/zivotopis.pdf" download class="download-cv-btn">Zobrazit životopis</a>
+      </div>
+      <div class="keyboard-foto">
+        <img src="img/keyboard.png" alt="klávesnice" />
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const uvodText = document.querySelector('.uvod-text');
+    const keyboard = document.querySelector('.keyboard-foto');
+    uvodText.classList.add('animate');
+    keyboard.classList.add('animate');
+    });
+</script>
+</body>
+</html>

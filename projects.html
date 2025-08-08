@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - projekty</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="head-container">
+      <h1 class="name"><i class="fas fa-code page-icon"></i>Michal Dlouhý</h1>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Úvod</a></li>
+          <li><a href="about.html">O mně</a></li>
+          <li><a href="projects.html">Projekty</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="projects-section">
+  <h2 class="projects-title">Moje Projekty</h2>
+
+  <div class="tabs">
+    <button class="tab active" data-category="school">Školní</button>
+    <button class="tab" data-category="personal">Osobní</button>
+    <button class="tab" data-category="fun">Zábavné</button>
+  </div>
+
+  <div class="project-list">
+    
+    <div class="project-card" data-category="school">
+      <h3>Webová stránka - Ročníkový projekt</h3>
+      <p>Tento projekt vznikl jako závěrečný úkol do předmětu Tvorba webových stránek na střední škole. Cílem bylo vytvořit jednoduchou webovou stránku pouze pomocí HTML a CSS, bez nutnosti programování funkcionalit. Projekt mi umožnil lépe porozumět základům struktury webu, práci s kaskádovými styly a základnímu designu stránek a zároveň mi pomohl propojit a využít všechny tyto dovednosti v praxi.</p>
+      <a href="Projekty/Školní/Webová stránka - Ročníkový projekt/index.html" class="project-btn">Zobrazit projekt</a>
+      <span class="project-time">Čas strávený na projektu: 6 hodin</span>
+      <hr>
+
+      <h3>PROJEKT</h3>
+      <p>POPIS</p>
+      <button class="project-btn">Stáhnout projekt</button>
+      <span class="project-time">Čas strávený na projektu: X hodin</span>
+      <hr>
+    </div>
+
+    <div class="project-card" data-category="personal">
+
+    </div>
+    <div class="project-card" data-category="fun">
+
+    </div>
+  </div>
+</main>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+  </script>
+  <script src="scripts.js"></script>
+</body>
+</html>
+
