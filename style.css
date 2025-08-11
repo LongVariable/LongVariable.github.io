@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #090b0e;
+  background-color: #0a0d10;
   color: #fff;
   font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
@@ -18,7 +18,8 @@ header {
   position: sticky;
   top: 0px;
   z-index: 10;
-  background-color: #090b0e;
+  background-color: #0a0d10;
+  width: 100%;
 }
 
 .head-container {
@@ -37,7 +38,7 @@ header {
   display: inline-block;
   align-items: center;
   font-size: 1.5rem;
-  color: #d4431f;
+  color: #1a95e1;
   font-family: 'Segoe UI', sans-serif;
   position: relative;
 }
@@ -48,7 +49,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
-  color: #d4431f;
+  color: #1a95e1;
   user-select: none;
 }
 
@@ -72,7 +73,7 @@ nav {
 }
 
 .nav-links li a:hover {
-  color: #d4431f;
+  color: #1a95e1;
 }
 
 .nav-links li a::after {
@@ -84,7 +85,7 @@ nav {
   transform-origin: center;
   height: 2px;
   width: 100%;
-  background-color: #d4431f;
+  background-color: #1a95e1;
   transition: transform 0.3s ease;
 }
 
@@ -99,6 +100,106 @@ nav {
   cursor: pointer;
 }
 
+.uvod {
+  padding: 6rem 1rem;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.uvod-flex {
+  display: flex;
+  align-items: center;       /* Vertikální centrování */
+  gap: 2rem;
+  padding: 4rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.uvod-text {
+  flex: 1;                  
+  max-width: 50%;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.uvod-text.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.download-cv-btn {
+  display: inline-block;
+  margin-top: 5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #1a95e1;
+  color: #0a0d10;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.download-cv-btn:hover {
+  background-color: #1775af;
+}
+.keyboard-foto{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.keyboard-foto.animate{
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.keyboard-foto img{
+width: 100%;
+  height: auto;
+  /* maska která dělá levý horní roh průhledný */
+  -webkit-mask-image: radial-gradient(circle at top left, transparent 10%, transparent 300px, black 400px);
+  mask-image: radial-gradient(circle at top left, transparent 0, transparent 120px, black 400px),
+              radial-gradient(circle at bottom left, transparent 0, transparent 120px, black 400px),
+              linear-gradient(to left, black 80%, transparent 100%),
+              radial-gradient(circle at top right, transparent 0, transparent 120px, black 400px),
+              radial-gradient(circle at bottom right, transparent 0, transparent 120px, black 400px);
+  mask-composite: intersect;
+}
+
+.pozdrav {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.tecka {
+  color: #1a95e1;
+}
+
+.jmeno {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.profese {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a95e1;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .name{
@@ -106,6 +207,14 @@ nav {
   }
   .page-icon{
     left: 0.3rem;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #0a0d10;
   }
 
   .nav-links {
@@ -132,101 +241,124 @@ nav {
     padding: 2rem 1rem;
   }
 
+  .uvod-text {
+    max-width: 100%;
+    flex: none;
+    text-align: left;
+    margin-left: -2rem; /* ikona + mezera - padding containeru */
+  }
+  .uvod-text .pozdrav{
+    font-size: 3.5rem;
+  } 
+  .uvod-text .jmeno{
+    font-size: 2rem;
+  } 
+  .uvod-text .profese{
+    font-size: 1.5rem;
+  }
+
   .uvod-foto img {
     width: 300px;
     height: 300px;
     margin: 1rem auto 0;
   }
-}
 
-.uvod {
-  padding: 6rem 1rem;
-  background-color: transparent;
+  .keyboard-foto img {
+    display: none;
+  }
 }
+/* --------------- About----------------*/
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 1rem;
-}
-
-.uvod-flex {
+.about-flex {
   display: flex;
-  align-items: center;       /* Vertikální centrování */
+  align-items: center;
   gap: 2rem;
   padding: 4rem 1rem;
   width: 100%;
   box-sizing: border-box;
+  flex-direction: row;
 }
 
-.uvod-text {
-  flex: 1;                  /* Zabere polovinu prostoru */
+.about-text {
+  flex: 1;                   
   max-width: 50%;
+  margin-top: -250px;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.about-text.animate{
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.download-cv-btn {
-  display: inline-block;
-  margin-top: 5rem;
-  padding: 0.7rem 1.5rem;
-  background-color: #d4431f;
-  color: #090b0e;
-  font-weight: bold;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
+.about-text h2{
+  font-size: 3rem;
+  color: #1a95e1;
+  margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 1.5rem;
 }
 
-.download-cv-btn:hover {
-  background-color: #d4431f;
-}
 
-.uvod-foto {
-  flex: 1;                  /* Zabere druhou polovinu */
+.about-foto {
+  flex: 1;
   max-width: 50%;
   margin-left: 0;
-  background: #090b0e;  /* žádné pozadí */
-  box-shadow: none;         /* žádný stín */
-  border: none;             /* žádný border */
+  background: #0a0d10;
+  box-shadow: none;       
+  border: none;     
   text-align: center;
+  padding-top: -30px;
+  opacity: 0;
+  transform: translateX(150px);
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+.about-foto.animate{
+  opacity: 1;
+  transform: translateX(0px);
 }
 
-.uvod-foto img {
+.about-foto img {
   width: 100%;
   height: auto;
   /* maska která dělá levý horní roh průhledný */
-  -webkit-mask-image: radial-gradient(circle at top left, transparent 0, transparent 300px, black 400px);
-  mask-image: radial-gradient(circle at top left, transparent 0, transparent 50px, black 400px),
-              radial-gradient(circle at top right, transparent 0, transparent 50px, black 400px),
-              radial-gradient(circle at bottom right, transparent 0, transparent 40px, black 400px),
-              radial-gradient(circle at right center, transparent 0, transparent 10px, black 100px),
-              radial-gradient(circle at top center, transparent 0, transparent 10px, black 200px);
+  -webkit-mask-image: radial-gradient(circle at top left, transparent 10%, transparent 300px, black 400px);
+  mask-image: radial-gradient(circle at bottom left, transparent 0, transparent 80px, black 300px),
+              radial-gradient(circle at bottom left, transparent 0, transparent 40px, black 60px),
+              radial-gradient(circle at 20% 100%, transparent 0, transparent 20px, black 40px),
+              radial-gradient(circle at 40% 100%, transparent 0, transparent 15px, black 30px),
+              linear-gradient(to bottom, black 80%, transparent 100%),
+              linear-gradient(to bottom, black 70%, rgba(0,0,0,0.5) 90%, transparent 100%);
   mask-composite: intersect;
 }
 
-.pozdrav {
-  font-size: 4rem;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
+@media (max-width: 768px) {
+  .about-flex {
+    flex-direction: column;  /* Sloupec na mobilu */
+    padding: 2rem 1rem;
+  }
 
-.tecka {
-  color: #d4431f;
-}
+  .about-text {
+    max-width: 100%;
+    margin-top: 1rem;
+    order: 2;
+    margin: 0;
+    margin-left: -6.5rem;
+  }
 
-.jmeno {
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
+  .about-foto {
+    max-width: 100%;
+    order: 1;
+  }
 
-.profese {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #d4431f;
+  .about-foto img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 /* --------------- Projects----------------*/
@@ -243,7 +375,7 @@ nav {
 
 .projects-title {
   font-size: 2rem;
-  color: #d4431f;
+  color: #1a95e1;
   text-align: center;
   margin-bottom: 4rem;
 }
@@ -260,7 +392,7 @@ nav {
 
 .tab {
   padding: 0.75rem 1.5rem;
-  background-color: #090b0e;
+  background-color: #0a0d10;
   color: #fff;
   border: 1px solid #333;
   border-bottom: none;
@@ -285,8 +417,8 @@ nav {
 }
 
 .tab.active {
-  background-color: #d4431f;
-  color: #090b0e;
+  background-color: #1a95e1;
+  color: #0a0d10;
   font-weight: bold;
 }
 
@@ -321,9 +453,9 @@ nav {
 
 .project-btn {
   display: inline-block;
-  background-color: #d4431f;
+  background-color: #1a95e1;
   border: none;
-  color: #090b0e;
+  color: #0a0d10;
   font-weight: bold;
   padding: 0.6rem 0.8rem 0.7rem 0.8rem ;
   border-radius: 5px;
@@ -337,7 +469,7 @@ nav {
 }
 
 .project-btn:hover {
-  background-color: #d4431f;
+  background-color: #1775af;
 }
 
 .project-card p {
@@ -346,6 +478,10 @@ nav {
   color: #ddd;
   font-size: 1rem;
   line-height: 1.4;
+}
+
+.project-card p b{
+  color: #1a95e1;
 }
 
 .project-card hr {
@@ -387,6 +523,33 @@ nav {
     position: relative;
     top: 0;
   }
+  .project-list {
+    padding-left: 15%;
+    padding-right: 5%;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .project-card h3{
+    font-size: 1rem;
+  }
+  .project-card p {
+    font-size: 0.9rem;
+  }
+  .project-time {
+  font-size: 0.8rem;
+  color: #9a9a9a;
+  line-height: 2.4rem;
+  padding: 0.5rem 0;
+  margin-left: 0;
+  float: left;
+  }
+  .project-card hr {
+  border: 0;
+  border-top: 1px solid #333;
+  padding-bottom: 1rem;
+  margin-top: 4rem;
+  text-align: left;
+  }
 }
 
 /* --------------- Contacts----------------*/
@@ -398,9 +561,10 @@ nav {
 }
 
 .contact-container h2 {
-  color: #d4431f;
-  margin-bottom: 2.4rem;        
-  font-size: 3rem;           
+  color: #1a95e1;
+  margin-bottom: 2.4rem;   
+  margin-left: -0.2rem;      
+  font-size: 3rem;        
 }
 
 .contact-item {
@@ -413,7 +577,7 @@ nav {
 
 .contact-item i {
   margin-right: 1rem;
-  color: #d4431f;
+  color: #1a95e1;
   width: 24px;                 
   text-align: center;
   flex-shrink: 0;
@@ -426,7 +590,7 @@ nav {
 }
 
 .contact-item a:hover {
-  color: #d4431f;
+  color: #1a95e1;
 }
 
 

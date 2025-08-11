@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - O mně</title>
-  <link rel="icon" href="favicon.svg" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link rel="stylesheet" href="style.css" />
 </head>
@@ -24,11 +27,33 @@
     </div>
   </header>
 
+
+  <main class="about">
+    <div class="container about-flex">
+      <div class="about-text">
+        <h2>O mně</h2>
+        <p>Text</p>
+      </div>
+      <div class="about-foto">
+        <img src="img/me.png" alt="Já" />
+      </div>
+    </div>
+  </main>
+  
+
   <script>
     function toggleMenu() {
       const nav = document.getElementById("navLinks");
       nav.classList.toggle("active");
     }
+  </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const uvodText = document.querySelector('.about-foto');
+    const keyboard = document.querySelector('.about-text');
+    uvodText.classList.add('animate');
+    keyboard.classList.add('animate');
+    });
   </script>
 </body>
 </html>

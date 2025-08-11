@@ -4,14 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio - Michal Dlouhý</title>
-  <link rel="icon" href="favicon.svg" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   
   <header>
-   
     <div class="head-container">
     
       <h1 class="name"><i class="fas fa-home page-icon"></i>Michal Dlouhý</h1>
@@ -35,8 +37,8 @@
         <p class="profese">IT nadšenec</p>
         <a href="files/zivotopis.pdf" download class="download-cv-btn">Stáhnout životopis</a>
       </div>
-      <div class="uvod-foto">
-        <img src="img/" alt="Já" />
+      <div class="keyboard-foto">
+        <img src="img/keyboard.png" alt="klávesnice" />
       </div>
     </div>
   </main>
@@ -47,5 +49,13 @@
       nav.classList.toggle("active");
     }
   </script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const uvodText = document.querySelector('.uvod-text');
+    const keyboard = document.querySelector('.keyboard-foto');
+    uvodText.classList.add('animate');
+    keyboard.classList.add('animate');
+    });
+</script>
 </body>
 </html>
