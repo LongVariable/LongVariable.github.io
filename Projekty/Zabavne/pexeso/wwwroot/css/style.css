@@ -1,0 +1,111 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px; /* malý padding okolo */
+}
+
+
+#cas {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#startBtn {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#pexesoGrid {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 5px;
+    justify-content: center;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.karta {
+    background-color: #007acc;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+}
+
+    .karta:hover {
+        background-color: #005f99;
+    }
+
+.karta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.karta.otevrena .karta-inner {
+    transform: rotateY(180deg);
+}
+
+.karta-front,
+.karta-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.karta-front {
+    background-color: #007acc;
+}
+
+.karta-back {
+    background-color: #005f99;
+    transform: rotateY(180deg);
+}
+
+/* Responsivní úpravy pro mobilní zařízení */
+@media (max-width: 600px) {
+    body {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #pexesoGrid {
+        grid-template-columns: repeat(8, 35px);
+        grid-template-rows: repeat(8, 35px);
+        gap: 4px;
+        width: max-content;
+        margin: 0 auto;
+    }
+
+    .karta {
+        font-size: 14px;
+        /* menší velikost písma a karty na mobil */
+        width: 35px;
+        height: 35px;
+    }
+
+    .karta-front,
+    .karta-back {
+        font-size: 14px;
+    }
+}
