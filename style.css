@@ -101,23 +101,28 @@ nav {
 }
 
 .uvod {
-  padding: 6rem 1rem;
+  height: 80vh;           
+  display: flex;
+  justify-content: center; 
+  align-items: center;   
   background-color: transparent;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .uvod-flex {
-  display: flex;
-  align-items: center;       /* Vertikální centrování */
+ display: flex;
+  align-items: center;
   gap: 2rem;
-  padding: 4rem 1rem;
   width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
 }
 
@@ -271,21 +276,21 @@ width: 100%;
 
 .about-flex {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 4rem 1rem;
+  align-items: center; 
+  gap: 3rem;            
+  padding: 2rem 0; 
   width: 100%;
   box-sizing: border-box;
   flex-direction: row;
 }
 
 .about-text {
-  flex: 1;                   
-  max-width: 50%;
-  margin-top: -250px;
+  flex: 1;
+  max-width: 45%;
   opacity: 0;
   transform: translateX(-100px);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  margin-right: auto;  
 }
 .about-text.animate{
   opacity: 1;
@@ -293,27 +298,29 @@ width: 100%;
 }
 
 .about-text h2{
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #1a95e1;
   margin-bottom: 20px;
+  margin-left: 1rem;
 }
 .about-text p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  line-height: 1.7;
 }
 
 
 .about-foto {
   flex: 1;
-  max-width: 50%;
-  margin-left: 0;
+  max-width: 40%;  
   background: #0a0d10;
-  box-shadow: none;       
-  border: none;     
+  box-shadow: none;
+  border: none;
   text-align: center;
-  padding-top: -30px;
   opacity: 0;
   transform: translateX(150px);
   transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+  margin-left: auto;
 }
 .about-foto.animate{
   opacity: 1;
@@ -336,26 +343,33 @@ width: 100%;
 
 @media (max-width: 768px) {
   .about-flex {
-    flex-direction: column;  /* Sloupec na mobilu */
+    flex-direction: column;
     padding: 2rem 1rem;
   }
 
   .about-text {
     max-width: 100%;
-    margin-top: 1rem;
     order: 2;
-    margin: 0;
-    margin-left: -6.5rem;
+    margin: 1rem 0 0 0;
+   
+  }
+  .about-text h2{
+    font-size: 2.5rem;
+  }
+  .about-text p{
+    font-size: 1.2rem;
   }
 
   .about-foto {
     max-width: 100%;
     order: 1;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .about-foto img {
     width: 300px;
-    height: 300px;
+    height: auto;
     margin: 0 auto;
     display: block;
   }
