@@ -124,3 +124,7 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 document.getElementById('focus-toggle').addEventListener('click', () => {
     document.body.classList.toggle('focus-mode');
 });
+
+document.getElementById('sidebar-toggle').addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-collapsed');
+});

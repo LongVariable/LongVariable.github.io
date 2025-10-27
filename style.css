@@ -110,6 +110,133 @@ body {
     z-index: 5;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 0;
+    z-index: 100;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--color-sidebar-hover);
+}
+
+.sidebar-open-icon {
+    display: block;
+    color: var(--color-accent);
+}
+
+.sidebar-close-icon {
+    display: none;
+    color: var(--color-accent);
+}
+
+body.sidebar-collapsed .sidebar-open-icon {
+    display: none;
+}
+
+body.sidebar-collapsed .sidebar-close-icon {
+    display: block;
+}
+
+/* Collapsed Sidebar State */
+body.sidebar-collapsed .sidebar {
+    width: 80px;
+    padding: 30px 10px;
+}
+
+/* Skrytí profilu */
+body.sidebar-collapsed .profile-img,
+body.sidebar-collapsed .profile h2,
+body.sidebar-collapsed .profile p {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: none;
+}
+
+body.sidebar-collapsed .profile {
+    margin-bottom: 60px;
+}
+
+body.sidebar-collapsed .nav a span {
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    overflow: hidden;
+}
+
+body.sidebar-collapsed .nav a {
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 12px !important;
+    width: 60px !important;
+    height: 44px !important;
+    margin: 0 auto !important;
+    gap: 0 !important;
+}
+
+body.sidebar-collapsed .nav a svg {
+    opacity: 1 !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+}
+
+body.sidebar-collapsed .nav a:not(:last-child)::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 50% !important;
+}
+
+body.sidebar-collapsed .sidebar-toggle {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+}
+
+body.sidebar-collapsed .theme-toggle {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 60px;
+}
+
+body.sidebar-collapsed .focus-toggle {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+}
+
+.sidebar {
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-img,
+.profile h2,
+.profile p {
+    transition: opacity 0.2s ease, visibility 0.2s ease, height 0.2s ease;
+}
+
+.nav a span {
+    transition: opacity 0.2s ease, visibility 0.2s ease, width 0.2s ease;
+}
 
 .card-connector-column {
     position: relative;
