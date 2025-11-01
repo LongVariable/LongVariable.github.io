@@ -779,16 +779,31 @@ body.focus-mode .card-header h1::after {
     box-shadow: 0 5px 20px var(--color-stat-hover-shadow);
 }
 
-/* Zaoblení rohů - levé tlačítko */
+
 .split-left {
     border-radius: 12px 0 0 12px;
-    border-right: 1px solid var(--color-stat-border);
+    border-right: 1px solid var(--color-card);
 }
 
-/* Zaoblení rohů - pravé tlačítko */
 .split-right {
     border-radius: 0 12px 12px 0;
-    border-left: 1px solid var(--color-stat-border);
+    border-left: 1px solid var(--color-card);
+}
+
+.split-left:hover {
+    border-right-color: var(--color-accent);
+}
+
+.split-left:hover + .split-right {
+    border-left-color: var(--color-accent);
+}
+
+.split-right:hover {
+    border-left-color: var(--color-accent);
+}
+
+.social-link-split:has(.split-right:hover) .split-left {
+    border-right-color: var(--color-accent);
 }
 
 .split-link svg,
