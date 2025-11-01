@@ -745,14 +745,189 @@ body.focus-mode .card-header h1::after {
     padding: 0;
 }
 
+/* ============================================
+   NOVÉ STYLY PRO UPRAVENÉ SOCIÁLNÍ ODKAZY
+   ============================================ */
+
+/* Půlené GitHub tlačítko */
+.social-link-split {
+    display: flex;
+    gap: 0;
+    position: relative;
+}
+
+.split-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    background: var(--color-stat-bg);
+    border: 2px solid var(--color-stat-border);
+}
+
+.split-link:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 5px 20px var(--color-stat-hover-shadow);
+}
+
+/* Zaoblení rohů - levé tlačítko */
+.split-left {
+    border-radius: 12px 0 0 12px;
+    border-right: 1px solid var(--color-stat-border);
+}
+
+/* Zaoblení rohů - pravé tlačítko */
+.split-right {
+    border-radius: 0 12px 12px 0;
+    border-left: 1px solid var(--color-stat-border);
+}
+
+.split-link svg,
+.split-link span {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.split-link svg {
+    flex-shrink: 0;
+}
+
+/* Email sekce - mimo tlačítka */
+.email-section {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--color-stat-bg) 0%, var(--color-stat-bg) 100%);
+    border: 2px solid var(--color-stat-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.email-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.email-section:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 5px 20px var(--color-stat-hover-shadow);
+}
+
+.email-section:hover::before {
+    opacity: 0.05;
+}
+
+.email-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.email-label svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.email-value {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.email-address {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 15px;
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+}
+
+.copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: var(--color-accent);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 12px rgba(255, 140, 66, 0.4);
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.copy-icon,
+.check-icon {
+    position: absolute;
+    transition: all 0.3s ease;
+    color: var(--color-card);
+}
+
+.check-icon {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+}
+
+.copy-btn.copied .copy-icon {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+}
+
+.copy-btn.copied .check-icon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* Aktualizace social-grid pro nový layout */
 .social-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-.social-link,
-.email-display {
+.social-link {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -766,65 +941,23 @@ body.focus-mode .card-header h1::after {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-}
-
-.social-link {
     text-decoration: none;
 }
 
-.social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: var(--color-accent);
-    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 0;
-}
-
-.social-link:hover::before {
-    left: 0;
-}
-
 .social-link svg,
-.email-display svg {
+.social-link span {
     position: relative;
     z-index: 1;
-    flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
-.social-link span,
-.email-display span {
-    position: relative;
-    z-index: 1;
-    transition: all 0.3s ease;
+.social-link svg {
+    flex-shrink: 0;
 }
 
 .social-link:hover {
     border-color: var(--color-accent);
     box-shadow: 0 5px 20px var(--color-stat-hover-shadow);
-}
-
-.email-display {
-    cursor: text;
-}
-
-.email-display:hover {
-    border-color: var(--color-accent);
-}
-
-.email-display svg {
-    color: var(--color-accent);
-}
-
-.email-text {
-    user-select: text;
-    -webkit-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
 }
 
 /* CV Download Button */
@@ -1173,6 +1306,17 @@ body.light-mode .cv-download-btn {
         grid-template-columns: 1fr !important;
     }
 
+    .email-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .email-value {
+        width: 100%;
+        justify-content: space-between;
+    }
+
     body.focus-mode .nav a svg {
         display: block;
         opacity: 1;
@@ -1307,10 +1451,32 @@ body.light-mode .cv-download-btn {
         font-size: 18px;
     }
 
-    .social-link,
-    .email-display {
-        padding: 12px 16px;
+    .split-link {
+        padding: 10px 12px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .split-link svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .email-section {
+        padding: 14px 16px;
+    }
+
+    .email-label {
+        font-size: 13px;
+    }
+
+    .email-address {
         font-size: 14px;
+    }
+
+    .copy-btn {
+        width: 28px;
+        height: 28px;
     }
 
     body.focus-mode .nav a {
@@ -1402,5 +1568,380 @@ body.light-mode .cv-download-btn {
 
     body.sidebar-collapsed .content {
         margin-top: 71px;
+    }
+}
+/* ============================================
+   PROJEKTY SEKCE
+   ============================================ */
+
+/* Filtry */
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background: var(--color-stat-bg);
+    border: 2px solid var(--color-stat-border);
+    border-radius: 10px;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.filter-btn span,
+.filter-btn::after {
+    position: relative;
+    z-index: 1;
+}
+
+.filter-btn:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 15px var(--color-stat-hover-shadow);
+}
+
+.filter-btn.active {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 15px var(--color-stat-hover-shadow);
+    background: rgba(255, 140, 66, 0.1);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+/* Karta projektu */
+.project-card {
+    background: var(--color-stat-bg);
+    border: 2px solid var(--color-stat-border);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-accent);
+    transform: scaleY(0);
+}
+
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 30px var(--color-stat-hover-shadow);
+}
+
+/* Skrytý projekt (při filtrování) */
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+    position: absolute;
+}
+
+/* Header projektu */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.project-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0;
+    flex: 1;
+}
+
+.project-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 140, 66, 0.1);
+    padding: 6px 12px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.project-time svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.project-time span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-accent);
+    white-space: nowrap;
+}
+
+/* Popis projektu */
+.project-description {
+    color: var(--color-text-primary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Badges */
+.project-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.badge {
+    padding: 2px 8px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Barvy pro jednotlivé technologie */
+.badge-csharp {
+    background: rgba(104, 33, 122, 0.2);
+    color: #9b4f96;
+    border: 1px solid rgba(104, 33, 122, 0.3);
+}
+
+.badge-blazor {
+    background: rgba(82, 0, 255, 0.2);
+    color: #a855f7;
+    border: 1px solid rgba(82, 0, 255, 0.3);
+}
+
+.badge-javascript {
+    background: rgba(240, 219, 79, 0.2);
+    color: #d4a017;
+    border: 1px solid rgba(240, 219, 79, 0.3);
+}
+
+.badge-html {
+    background: rgba(227, 79, 38, 0.2);
+    color: #e34c26;
+    border: 1px solid rgba(227, 79, 38, 0.3);
+}
+
+.badge-sql {
+    background: rgba(0, 117, 143, 0.2);
+    color: #00758f;
+    border: 1px solid rgba(0, 117, 143, 0.3);
+}
+
+/* Light mode barvy pro badges */
+body.light-mode .badge-csharp {
+    background: rgba(104, 33, 122, 0.3);
+    color: #68217a;
+}
+
+body.light-mode .badge-blazor {
+    background: rgba(82, 0, 255, 0.3);
+    color: #5200ff;
+}
+
+body.light-mode .badge-javascript {
+    background: rgba(240, 219, 79, 0.3);
+    color: #a67c00;
+}
+
+body.light-mode .badge-html {
+    background: rgba(227, 79, 38, 0.3);
+    color: #c13a1a;
+}
+
+body.light-mode .badge-sql {
+    background: rgba(0, 117, 143, 0.3);
+    color: #005768;
+}
+
+body.light-mode .project-time {
+    background: rgba(154, 61, 3, 0.1);
+}
+
+/* Animace při načtení */
+@keyframes projectFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: projectFadeIn 0.5s ease-out backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* ============================================
+   RESPONSIVE PRO PROJEKTY
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 15px;
+    }
+
+    .project-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-filters {
+        gap: 8px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-time {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-title {
+        font-size: 18px;
+    }
+
+    .project-description {
+        font-size: 14px;
+    }
+
+    .filter-btn {
+        padding: 7px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Tlačítko pro odkaz na projekt */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background: var(--color-accent);
+    color: var(--color-card);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color-accent);
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.project-link:hover::before {
+    width: 200px;
+    height: 200px;
+}
+
+.project-link svg {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.project-link span {
+    position: relative;
+    z-index: 1;
+}
+
+.project-link:hover {
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+}
+
+
+/* Light mode */
+body.light-mode .project-link {
+    box-shadow: 0 2px 10px rgba(154, 61, 3, 0.3);
+}
+
+body.light-mode .project-link:hover {
+    box-shadow: 0 4px 15px rgba(154, 61, 3, 0.4);
+}
+
+@media (max-width: 480px) {
+    .project-link {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 13px;
     }
 }
