@@ -340,7 +340,6 @@ body.light-mode .nav a:not(:last-child)::after {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Focus Mode */
 body.focus-mode .nav svg {
     opacity: 0;
     width: 0;
@@ -357,7 +356,6 @@ body.focus-mode .nav a:not(:last-child)::after {
     width: 50%;
 }
 
-/* Theme Toggle */
 .theme-toggle {
     position: absolute;
     bottom: 10px;
@@ -406,7 +404,6 @@ body.light-mode .moon-icon {
     display: block;
 }
 
-/* Focus Toggle */
 .focus-toggle {
     position: absolute;
     bottom: 10px;
@@ -466,10 +463,6 @@ body.focus-mode .eye-off-icon {
     display: none;
 }
 
-/* ============================================
-   CONNECTOR COLUMN
-   ============================================ */
-
 .card-connector-column {
     position: relative;
     width: 2px;
@@ -495,10 +488,6 @@ body.focus-mode .eye-off-icon {
     background-color: var(--color-card);
     transition: background-color 0.3s ease;
 }
-
-/* ============================================
-   CONTENT & CARDS
-   ============================================ */
 
 .content {
     flex: 1;
@@ -607,10 +596,6 @@ body.focus-mode .card-header h1::after {
     z-index: 2;
 }
 
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
-
 .about-container {
     display: flex;
     flex-direction: row;
@@ -717,7 +702,6 @@ body.focus-mode .card-header h1::after {
     font-weight: 500;
 }
 
-/* Section Subtitles */
 .section-subtitle {
     font-size: 20px;
     font-weight: 700;
@@ -739,17 +723,12 @@ body.focus-mode .card-header h1::after {
     border-radius: 2px;
 }
 
-/* Social Links */
 .social-links {
     width: 100%;
     padding: 0;
 }
 
-/* ============================================
-   NOVÉ STYLY PRO UPRAVENÉ SOCIÁLNÍ ODKAZY
-   ============================================ */
 
-/* Půlené GitHub tlačítko */
 .social-link-split {
     display: flex;
     gap: 0;
@@ -817,7 +796,6 @@ body.focus-mode .card-header h1::after {
     flex-shrink: 0;
 }
 
-/* Email sekce - mimo tlačítka */
 .email-section {
     margin-top: 20px;
     padding: 16px 20px;
@@ -935,7 +913,6 @@ body.focus-mode .card-header h1::after {
     transform: scale(1) rotate(0deg);
 }
 
-/* Aktualizace social-grid pro nový layout */
 .social-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -975,7 +952,6 @@ body.focus-mode .card-header h1::after {
     box-shadow: 0 5px 20px var(--color-stat-hover-shadow);
 }
 
-/* CV Download Button */
 .cv-download-btn {
     display: inline-flex;
     align-items: center;
@@ -1029,7 +1005,6 @@ body.light-mode .cv-download-btn {
     box-shadow: 0 4px 15px rgba(154, 61, 3, 0.3);
 }
 
-/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -1055,9 +1030,6 @@ body.light-mode .cv-download-btn {
     animation-delay: 0.2s;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
 
 @media (max-width: 1024px) {
     body {
@@ -1078,7 +1050,6 @@ body.light-mode .cv-download-btn {
         height: 15px;
     }
 
-    /* Sidebar */
     .sidebar {
         width: 100%;
         height: auto;
@@ -1585,11 +1556,7 @@ body.light-mode .cv-download-btn {
         margin-top: 71px;
     }
 }
-/* ============================================
-   PROJEKTY SEKCE
-   ============================================ */
 
-/* Filtry */
 .project-filters {
     display: flex;
     flex-wrap: wrap;
@@ -1645,7 +1612,6 @@ body.light-mode .cv-download-btn {
     gap: 20px;
 }
 
-/* Karta projektu */
 .project-card {
     background: var(--color-stat-bg);
     border: 2px solid var(--color-stat-border);
@@ -1676,7 +1642,7 @@ body.light-mode .cv-download-btn {
     box-shadow: 0 10px 30px var(--color-stat-hover-shadow);
 }
 
-/* Skrytý projekt (při filtrování) */
+
 .project-card.hidden {
     opacity: 0;
     transform: scale(0.8);
@@ -1684,7 +1650,6 @@ body.light-mode .cv-download-btn {
     position: absolute;
 }
 
-/* Header projektu */
 .project-header {
     display: flex;
     justify-content: space-between;
@@ -1723,7 +1688,6 @@ body.light-mode .cv-download-btn {
     white-space: nowrap;
 }
 
-/* Popis projektu */
 .project-description {
     color: var(--color-text-primary);
     font-size: 15px;
@@ -1731,7 +1695,7 @@ body.light-mode .cv-download-btn {
     margin-bottom: 20px;
 }
 
-/* Badges */
+
 .project-badges {
     display: flex;
     flex-wrap: wrap;
@@ -1747,7 +1711,6 @@ body.light-mode .cv-download-btn {
     cursor: default;
 }
 
-/* Barvy pro jednotlivé technologie */
 .badge-csharp {
     background: rgba(104, 33, 122, 0.2);
     color: #9b4f96;
@@ -1778,7 +1741,6 @@ body.light-mode .cv-download-btn {
     border: 1px solid rgba(0, 117, 143, 0.3);
 }
 
-/* Light mode barvy pro badges */
 body.light-mode .badge-csharp {
     background: rgba(104, 33, 122, 0.3);
     color: #68217a;
@@ -1830,10 +1792,6 @@ body.light-mode .project-time {
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 .project-card:nth-child(5) { animation-delay: 0.5s; }
 .project-card:nth-child(6) { animation-delay: 0.6s; }
-
-/* ============================================
-   RESPONSIVE PRO PROJEKTY
-   ============================================ */
 
 @media (max-width: 1024px) {
     .projects-grid {
@@ -1889,7 +1847,6 @@ body.light-mode .project-time {
     }
 }
 
-/* Tlačítko pro odkaz na projekt */
 .project-link {
     display: inline-flex;
     align-items: center;
@@ -1942,8 +1899,6 @@ body.light-mode .project-time {
     box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
 }
 
-
-/* Light mode */
 body.light-mode .project-link {
     box-shadow: 0 2px 10px rgba(154, 61, 3, 0.3);
 }
@@ -1960,3 +1915,135 @@ body.light-mode .project-link:hover {
         font-size: 13px;
     }
 }
+
+.difficulty-thermometer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    padding: 12px 5px;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.thermometer-label-left,
+.thermometer-label-right {
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+}
+
+.thermometer-bar {
+    display: flex;
+    flex: 1;
+    height: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(
+        to right,
+        #22c55e 0%,
+        #4ade80 10%,
+        #84cc16 20%,
+        #a3e635 30%,
+        #facc15 40%,
+        #fb923c 50%,
+        #f97316 60%,
+        #ef4444 70%,
+        #f43f5e 80%,
+        #ec4899 100%
+    );
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.thermometer-number {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-weight: 800;
+    font-size: 15px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.difficulty-badge {
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+    cursor: default;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 2px solid;
+}
+
+.difficulty-1 { background: rgba(34, 197, 94, 0.25); color: #22c55e; border-color: #22c55e; }
+.difficulty-2 { background: rgba(74, 222, 128, 0.25); color: #4ade80; border-color: #4ade80; }
+.difficulty-3 { background: rgba(132, 204, 22, 0.25); color: #84cc16; border-color: #84cc16; }
+.difficulty-4 { background: rgba(190, 242, 100, 0.25); color: #a3e635; border-color: #a3e635; }
+.difficulty-5 { background: rgba(253, 224, 71, 0.25); color: #eab308; border-color: #eab308; }
+.difficulty-6 { background: rgba(251, 191, 36, 0.25); color: #f59e0b; border-color: #f59e0b; }
+.difficulty-7 { background: rgba(251, 146, 60, 0.25); color: #f97316; border-color: #f97316; }
+.difficulty-8 { background: rgba(239, 68, 68, 0.25); color: #ef4444; border-color: #ef4444; }
+.difficulty-9 { background: rgba(244, 63, 94, 0.25); color: #f43f5e; border-color: #f43f5e; }
+.difficulty-10 { background: rgba(236, 72, 153, 0.25); color: #ec4899; border-color: #ec4899; }
+
+body.light-mode .difficulty-1 { background: rgba(34, 197, 94, 0.35); color: #16a34a; border-color: #16a34a; }
+body.light-mode .difficulty-2 { background: rgba(74, 222, 128, 0.35); color: #15803d; border-color: #15803d; }
+body.light-mode .difficulty-3 { background: rgba(132, 204, 22, 0.35); color: #65a30d; border-color: #65a30d; }
+body.light-mode .difficulty-4 { background: rgba(190, 242, 100, 0.35); color: #4d7c0f; border-color: #4d7c0f; }
+body.light-mode .difficulty-5 { background: rgba(253, 224, 71, 0.35); color: #ca8a04; border-color: #ca8a04; }
+body.light-mode .difficulty-6 { background: rgba(251, 191, 36, 0.35); color: #ea580c; border-color: #ea580c; }
+body.light-mode .difficulty-7 { background: rgba(251, 146, 60, 0.35); color: #c2410c; border-color: #c2410c; }
+body.light-mode .difficulty-8 { background: rgba(239, 68, 68, 0.35); color: #dc2626; border-color: #dc2626; }
+body.light-mode .difficulty-9 { background: rgba(244, 63, 94, 0.35); color: #e11d48; border-color: #e11d48; }
+body.light-mode .difficulty-10 { background: rgba(236, 72, 153, 0.35); color: #db2777; border-color: #db2777; }
+
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .difficulty-thermometer {
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .thermometer-bar {
+        width: 100%;
+        height: 35px;
+    }
+
+    .thermometer-number {
+        font-size: 14px;
+    }
+
+    .project-meta {
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+

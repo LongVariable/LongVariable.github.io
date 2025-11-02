@@ -241,6 +241,23 @@
                     <h1>Projekty</h1>
                 </div>
                 <div class="card-content">
+                    <div class="difficulty-thermometer">
+                        <span class="thermometer-label-left">Lehké</span>
+                        <div class="thermometer-bar">
+                            <span class="thermometer-number" data-level="1">1</span>
+                            <span class="thermometer-number" data-level="2">2</span>
+                            <span class="thermometer-number" data-level="3">3</span>
+                            <span class="thermometer-number" data-level="4">4</span>
+                            <span class="thermometer-number" data-level="5">5</span>
+                            <span class="thermometer-number" data-level="6">6</span>
+                            <span class="thermometer-number" data-level="7">7</span>
+                            <span class="thermometer-number" data-level="8">8</span>
+                            <span class="thermometer-number" data-level="9">9</span>
+                            <span class="thermometer-number" data-level="10">10</span>
+                        </div>
+                        <span class="thermometer-label-right">Těžké</span>
+                    </div>
+
                     <div class="project-filters">
                         <button class="filter-btn active" data-filter="all">Všechny</button>
                         <button class="filter-btn" data-filter="csharp">C#</button>
@@ -250,16 +267,21 @@
                         <button class="filter-btn" data-filter="sql">SQL</button>
                     </div>
 
+                    
+
                     <div class="projects-grid">
                         <div class="project-card" data-tags="html javascript">
                             <div class="project-header">
                                 <h3 class="project-title">Osobní portfolio</h3>
-                                <div class="project-time">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <polyline points="12 6 12 12 16 14"></polyline>
-                                    </svg>
-                                    <span>~10h</span>
+                                <div class="project-meta">
+                                    <span class="difficulty-badge difficulty-10">3 ★</span>
+                                    <div class="project-time">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <polyline points="12 6 12 12 16 14"></polyline>
+                                        </svg>
+                                        <span>~30h</span>
+                                    </div>
                                 </div>
                             </div>
                             <p class="project-description">
